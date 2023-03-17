@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu_dien</title>
+</head>
+<body>
+<label for="Enter_here">Nhập từ</label>
+<input type="text" id="Enter_here">
+<button id="btn" onclick="trans()">Dịch</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let engArr = ['I','love','you','so','much', 'I love you so much'];
+  let vnArr = ['Tôi','yêu','em','rất','nhiều', 'Tôi cũng thế :))'];
+  let result = document.getElementById('result');
+
+  function trans() {
+    let search = document.getElementById('Enter_here').value;
+    let flag = false;
+    let count = 0;
+    for (let i = 0; i < engArr.length; i++) {
+      if (search == engArr[i]) {
+        flag = true;
+        count = i;
+      }
+    }
+    if (flag) {
+      result.innerHTML = `${vnArr[count]}`;
+    } else {
+      result.innerHTML = `Từ ${search} chưa được cập nhật trong từ điển của tôi`;
+    }
+  }
+</script>
